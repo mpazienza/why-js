@@ -10,3 +10,21 @@ Why.js is licensed under the terms of the MIT License.
 ## Contributing
 
 Everyone is free to contribute, but if your commits aren't interesting enough I will mock you openly.
+
+## Usage
+
+### Emotions
+
+**showEmotion**
+Visually express an emotion passed into the function
+
+    showEmotion('Happy');
+
+
+### Animal Sound Validation
+
+**theCowSays**
+Returns the sound a cow makes
+
+**thePigSays**
+Returns the sound a pig makes
