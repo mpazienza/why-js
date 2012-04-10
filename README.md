@@ -18,7 +18,7 @@ Everyone is free to contribute, but if your commits aren't interesting enough I 
 **showEmotion**
 Visually express an emotion passed into the function
 
-    showEmotion('Happy');
+    why.showEmotion('Happy');
 
 
 ### Animal Sound Validation
@@ -26,5 +26,9 @@ Visually express an emotion passed into the function
 **theCowSays**
 Returns the sound a cow makes
 
+    why.theCowSays();
+
 **thePigSays**
 Returns the sound a pig makes
+
+    why.thePigSays();
