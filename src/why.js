@@ -93,6 +93,35 @@ var why = (function () {
 		return 'oink';
 	};
 	
+	/**
+	* Returns the code for a direction
+	* @method why.convertDirection
+	* @param str direction the direction string you wish to convert
+	* @param str conversion the type of conversion, can be Word or Code
+	*/
+	why.convertDirection = function (direction, conversion) {
+		conversion = conversion || 'code';
+		
+		if (conversion === 'code') {
+			return direction.substr(0, 1).toUpperCase();
+		}
+		
+		if (conversion === 'word') {
+			switch (direction.toUpperCase()) {
+			case 'N':
+				return 'North';
+			case 'S':
+				return 'South';
+			case 'E':
+				return 'East';
+			case 'W':
+				return 'West';
+			}
+		}
+		
+		return false;
+	};
+	
 	return why;
 }());
 

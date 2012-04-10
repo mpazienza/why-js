@@ -32,3 +32,11 @@ Returns the sound a cow makes
 Returns the sound a pig makes
 
     why.thePigSays();
+    
+### Conversions
+
+**convertDirection**
+Convert a direction to a new format (North -> N, N -> North)
+
+    why.convertDirection('North');
+    why.convertDirection('N', 'word');
