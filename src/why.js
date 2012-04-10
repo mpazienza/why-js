@@ -94,10 +94,134 @@ var why = (function () {
 	};
 	
 	/**
+	* Returns true if today is a holiday
+	* @method why.isHoliday
+	* @param object params optional parameters to pass in such as country, nautical miles, speed, and mass
+	*/
+	why.isHoliday = function (params) {
+		var today = new Date(),
+				defaults = {
+					country : 'all'
+				};
+				
+		params = params || defaults;
+		
+		/* US Holidays */
+		if (params.country === 'US' || params.country === 'all') {
+			// January 1st - New Years
+			if (today.getMonth() === 0 && today.getDate() === 1) {
+				return true;
+		
+			// January 16th - MLK Day
+			} else if (today.getMonth() === 0 && today.getDate() === 16) {
+				return true;
+		
+			// February 2nd - Groundhog Day
+			} else if (today.getMonth() === 1 && today.getDate() === 2) {
+				return true;
+		
+			// February 12th - Lincoln's Birthday
+			} else if (today.getMonth() === 1 && today.getDate() === 12) {
+				return true;
+
+			// February 14th - Valentine's Day
+			} else if (today.getMonth() === 1 && today.getDate() === 14) {
+				return true;
+		
+			// February 20th - Presidents Day
+			} else if (today.getMonth() === 1 && today.getDate() === 14) {
+				return true;
+
+			// March 17th - St. Patricks Day
+			} else if (today.getMonth() === 2 && today.getDate() === 17) {
+				return true;
+		
+			// March 20th - Vernal Equinox
+			} else if (today.getMonth() === 2 && today.getDate() === 20) {
+				return true;
+
+			// March 30th - National Doctor's Day
+			} else if (today.getMonth() === 2 && today.getDate() === 30) {
+				return true;
+
+			// April 1st - April Fools Day
+			} else if (today.getMonth() === 3 && today.getDate() === 1) {
+				return true;
+
+			// April 22nd - Earth Day
+			} else if (today.getMonth() === 3 && today.getDate() === 22) {
+				return true;
+			
+			// Last Friday of April - Arbor Day
+			} else if (today.getMonth() === 3 && today.getDate() > 15 && (today.getDay() === 5 && today.getDate() + 7 > 30)) {
+				return true;
+			
+			// Second Sunday of May - Mothers Day
+			} else if (today.getMonth() === 4 && (today.getDay() === 0 && today.getDate() > 14)) {
+				return true;
+				
+			// Third Saturday of May - Armed Forces Day
+			} else if (today.getMonth() === 4 && (today.getDay() === 6 && today.getDate() - 21 > 1)) {
+				return true;
+				
+			// Last Monday of May - Memorial Day
+			} else if (today.getMonth() === 4 && (today.getDay() === 1 && today.getDate() + 7 > 31)) {
+				return true;
+
+			// June 14th - Flag Day
+			} else if (today.getMonth() === 5 && today.getDate() === 14) {
+				return true;
+			
+			// Third Sunday of June - Fathers Day
+			} else if (today.getMonth() === 5 && (today.getDay() === 0 && today.getDate() - 21 > 1)) {
+				return true;
+		
+			// July 4th - Independance Day
+			} else if (today.getMonth() === 6 && today.getDate() === 4) {
+				return true;
+			
+			// First Monday of September - Labor Day
+			} else if (today.getMonth() === 8 && today.getDate() < 15 && (today.getDay() === 1 && today.getDate() - 7 < 1)) {
+				return true;
+		
+			// September 11th - Patriot Day
+			} else if (today.getMonth() === 8 && today.getDate() === 11) {
+				return true;
+			
+			// Second Monday of October - Columbus Day
+			} else if (today.getMonth() === 9 && today.getDate() < 15 && (today.getDay() === 1 && today.getDate() - 14 > 1)) {
+				return true;
+		
+			// October 31st - Halloween
+			} else if (today.getMonth() === 9 && today.getDate() === 31) {
+				return true;
+
+			// Novermber 1st - All Saints Day
+			} else if (today.getMonth() === 10 && today.getDate() === 1) {
+				return true;
+		
+			// Novermber 11th - Veterans Day
+			} else if (today.getMonth() === 10 && today.getDate() === 11) {
+				return true;
+
+			// December 25th - Christmas Day
+			} else if (today.getMonth() === 11 && today.getDate() === 25) {
+				return true;
+		
+			// December 26 - January 1 - Kwanzaa
+			} else if (today.getMonth() === 11 && (today.getDate() > 25)) {
+				return true;
+			}
+		}
+		
+		return false;
+	};
+	
+	/**
 	* Returns the code for a direction
 	* @method why.convertDirection
-	* @param str direction the direction string you wish to convert
-	* @param str conversion the type of conversion, can be Word or Code
+	* @param string direction the direction string you wish to convert
+	* @param string conversion the type of conversion, can be Word or Code
 	*/
 	why.convertDirection = function (direction, conversion) {
 		conversion = conversion || 'code';

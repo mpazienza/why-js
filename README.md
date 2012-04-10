@@ -11,6 +11,10 @@ Why.js is licensed under the terms of the MIT License.
 
 Everyone is free to contribute, but if your commits aren't interesting enough I will mock you openly.
 
+## Contact
+
+I don't know why you would want to... but you can follow me on twitter @encryptomike
+
 ## Usage
 
 ### Emotions
@@ -32,6 +36,13 @@ Returns the sound a cow makes
 Returns the sound a pig makes
 
     why.thePigSays();
+    
+### Holiday Validation
+
+**isHoliday**
+Check if today is a holiday and return true or false
+
+    why.isHoliday();
     
 ### Conversions
 
