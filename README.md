@@ -31,6 +31,11 @@ Returns the title of a good Hoobastank song
 
     why.hoobastankMe();
 
+**seasonalClothing**
+Returns an necessary item of clothing for men depending on the season
+
+    why.seasonalClothing('fall');
+
 
 ### Animal Sound Validation
 
