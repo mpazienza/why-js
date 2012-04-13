@@ -335,7 +335,48 @@ var why = (function () {
 		
 		return false;
 	};
-	
+
+	/**
+	 * Returns an necessary item of clothing for men depending on the season
+	 * @method why.stylishClothingForMen
+	 * @param string season can be fall, winter, spring, or summer
+	 */
+	why.seasonalClothing = function (season) {
+		var clothings = {
+			cold : [
+				'Leather Gloves',
+			'Black Scarf',
+			'Denim',
+			'Gingham Check Shirt',
+			'Corduroy Pants',
+			'Wingtips',
+			'Leather Boots',
+			'Gray Suit'
+				],
+			hot : [
+				'Yellow Umbrella',
+			'Colored Chinos',
+			'Cotton Suit',
+			'Boat Shoes',
+			'White Oxfords',
+			'Cardigan Sweater',
+			'Surfboard',
+			'Shorts, 9"',
+			'Swimming Shorts, 5"'
+				]
+		}
+
+		if (season === 'fall' || season === 'winter') {
+			_rd = Math.floor(Math.random() * clothings.cold.length);
+			return clothings.cold[_rd];
+		} else if (season === 'spring' || season === 'summer') {
+			_rd = Math.floor(Math.random() * clothings.hot.length);
+			return clothings.hot[_rd];
+		}
+
+		return "Socks";
+	};
+
 	return why;
 }());
 
