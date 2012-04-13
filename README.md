@@ -23,6 +23,13 @@ I don't know why you would want to... but you can follow me on twitter @encrypto
 Visually express an emotion passed into the function
 
     why.showEmotion('Happy');
+    
+### Tools
+
+**hoobastankMe**
+Returns the title of a good Hoobastank song
+
+  why.hoobastankMe();
 
 
 ### Animal Sound Validation

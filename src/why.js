@@ -218,6 +218,96 @@ var why = (function () {
 	};
 	
 	/**
+	* Returns a randomized song title from Hoobastank
+	* @method why.hoobastankMe
+	* @param string direction the direction string you wish to convert
+	* @param string conversion the type of conversion, can be Word or Code
+	*/
+	why.hoobastankMe = function () {
+		var songs = {
+			titles : [
+				'Invisible',
+				'Pee Wee',
+				'Educated Fool',
+				'Naked Jock Man',
+				'Prank Call to Cobalt Cafe',
+				'Show me your Titz',
+				'Earthsick',
+				'Foot in your Mouth',
+				'Karma Patrol',
+				'Stuck without a Voice',
+				'Can I buy you a drink',
+				'Our Song',
+				'The Mirror',
+				'The Dance that broke my jaw',
+				'Crawling in the dark',
+				'Remember me',
+				'Running away',
+				'Pieces',
+				'Let you know',
+				'Better',
+				'Ready for you',
+				'Up and Gone',
+				'Too little too late',
+				'Hello again',
+				'To be with you',
+				'Give it back',
+				'Losing my grip',
+				'The critic',
+				'Same direction',
+				'Out of control',
+				'What happened to us?',
+				'Escape',
+				'Just one',
+				'Lucky',
+				'From the heart',
+				'The reason',
+				'Let it out',
+				'Unaffected',
+				'Never there',
+				'Disappear',
+				'The rules',
+				'Born to lead',
+				'Moving forward',
+				'Inside of you',
+				'The first of me',
+				'Good enough',
+				'If I were you',
+				'Without a fight',
+				'Don\'t tell me',
+				'Look where we are',
+				'Say the same',
+				'If only',
+				'More than a memory',
+				'Finally awake',
+				'Waiting',
+				'Face the music',
+				'My turn',
+				'I don\'t think I love you',
+				'So close, so far',
+				'All about you',
+				'The Letter',
+				'Tears of yesterday',
+				'Sick of hanging on',
+				'You\'re the one',
+				'Who the hell am I?',
+				'You need to be here',
+				'Gone gone gone',
+				'Replace you',
+				'Stay with me'
+			],
+			sucks : true
+		},
+		_rd = Math.floor(Math.random() * songs.titles.length);
+		
+		if (songs.sucks) {
+			return false;
+		} else {
+			return songs.titles[_rd];
+		}
+	};
+	
+	/**
 	* Returns the code for a direction
 	* @method why.convertDirection
 	* @param string direction the direction string you wish to convert
